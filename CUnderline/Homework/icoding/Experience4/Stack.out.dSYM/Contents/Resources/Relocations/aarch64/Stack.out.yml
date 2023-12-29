@@ -1,0 +1,17 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/baijiale/Documents/VisualStudioCode/c/CUnderline/Homework/ICODING/Experience4/Stack.out'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _stack_overflow, symObjAddr: 0x0, symBinAddr: 0x100003BC0, symSize: 0x1C }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _top, symObjAddr: 0xD98, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x5B, offset: 0x5B, size: 0x8, addend: 0x0, symName: _bottom, symObjAddr: 0xD9C, symBinAddr: 0x100008004, symSize: 0x0 }
+  - { offsetInCU: 0x7E, offset: 0x7E, size: 0x8, addend: 0x0, symName: _contents, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offsetInCU: 0x93, offset: 0x93, size: 0x8, addend: 0x0, symName: _stack_overflow, symObjAddr: 0x0, symBinAddr: 0x100003BC0, symSize: 0x1C }
+  - { offsetInCU: 0xA8, offset: 0xA8, size: 0x8, addend: 0x0, symName: _stack_underflow, symObjAddr: 0x1C, symBinAddr: 0x100003BDC, symSize: 0x1C }
+  - { offsetInCU: 0xBD, offset: 0xBD, size: 0x8, addend: 0x0, symName: _make_empty, symObjAddr: 0x38, symBinAddr: 0x100003BF8, symSize: 0xC }
+  - { offsetInCU: 0xD2, offset: 0xD2, size: 0x8, addend: 0x0, symName: _is_empty, symObjAddr: 0x44, symBinAddr: 0x100003C04, symSize: 0x18 }
+  - { offsetInCU: 0xEB, offset: 0xEB, size: 0x8, addend: 0x0, symName: _is_full, symObjAddr: 0x5C, symBinAddr: 0x100003C1C, symSize: 0x18 }
+  - { offsetInCU: 0x104, offset: 0x104, size: 0x8, addend: 0x0, symName: _push, symObjAddr: 0x74, symBinAddr: 0x100003C34, symSize: 0x5C }
+  - { offsetInCU: 0x128, offset: 0x128, size: 0x8, addend: 0x0, symName: _pop, symObjAddr: 0xD0, symBinAddr: 0x100003C90, symSize: 0x60 }
+  - { offsetInCU: 0x141, offset: 0x141, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x130, symBinAddr: 0x100003CF0, symSize: 0x208 }
+...

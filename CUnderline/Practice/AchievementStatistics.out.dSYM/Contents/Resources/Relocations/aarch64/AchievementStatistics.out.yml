@@ -1,0 +1,9 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/baijiale/Documents/Visual Studio Code/c/CUnderline/Practice/AchievementStatistics.out'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: __Z5ave_fPdid, symObjAddr: 0x0, symBinAddr: 0x100003CA8, symSize: 0x8C }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: __Z5ave_fPdid, symObjAddr: 0x0, symBinAddr: 0x100003CA8, symSize: 0x8C }
+  - { offsetInCU: 0xA5, offset: 0xA5, size: 0x8, addend: 0x0, symName: __Z7mount_fiPdii, symObjAddr: 0x8C, symBinAddr: 0x100003D34, symSize: 0x98 }
+  - { offsetInCU: 0x117, offset: 0x117, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x124, symBinAddr: 0x100003DCC, symSize: 0x19C }
+...
