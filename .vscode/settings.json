@@ -107,4 +107,9 @@
   "editor.cursorSmoothCaretAnimation": "off",
   "editor.cursorBlinking": "solid",
   "C_Cpp.autocompleteAddParentheses": true,
+  "explorer.sortOrder": "type",
+  "debug.console.closeOnEnd": true,
+  "debug.terminal.clearBeforeReusing": false,
+  "terminal.explorerKind": "integrated",
+  "code-runner.terminalRoot": "",
 }
