@@ -163,9 +163,11 @@ int main() {
     int k = Strcmp(buf, buf2);
     if (k == 0) {
         printf("strcmp: euqal\n");
-    } else if (k > 0) {
+    }
+    else if (k > 0) {
         printf("strcmp: greater\n");
-    } else {
+    }
+    else {
         printf("strcmp: lesser\n");
     }
 

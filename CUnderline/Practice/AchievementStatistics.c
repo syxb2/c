@@ -64,34 +64,34 @@
 #include <stdio.h>
 
 double ave_f(double *p, int a, double ave) {
-  for (int i = 0; i < a; i++) {
-    ave += *p;
-    ++p;
-  }
-  ave = ave / a;
+    for (int i = 0; i < a; i++) {
+        ave += *p;
+        ++p;
+    }
+    ave = ave / a;
 
-  return ave;
+    return ave;
 }
 
 int mount_f(int a, double *p, int mount, int ave) {
-  for (int i = 0; i < a; i++) {
-    if (*p < ave) {
-      mount += 1;
+    for (int i = 0; i < a; i++) {
+        if (*p < ave) {
+            mount += 1;
+        }
+        ++p;
     }
-    ++p;
-  }
 
-  return mount;
+    return mount;
 }
 
 int main() {
-  int n = 0, i = 0;  scanf("%d", &n);
-  double arr[n];
-  for (i = 0; i < n; i++) {
-    scanf("%lf", &arr[i]);
-  }
+    int n = 0, i = 0;  scanf("%d", &n);
+    double arr[n];
+    for (i = 0; i < n; i++) {
+        scanf("%lf", &arr[i]);
+    }
 
-  printf("%.1lf\n%d\n", ave_f(arr, n, 0.0), mount_f(n, arr, 0, ave_f(arr, n, 0)));
+    printf("%.1lf\n%d\n", ave_f(arr, n, 0.0), mount_f(n, arr, 0, ave_f(arr, n, 0)));
 
-  return 0;
+    return 0;
 }

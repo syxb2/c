@@ -31,13 +31,11 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     unsigned long n, f1 = 1, f2 = 1, f3 = 1;
 
     scanf("%lu", &n);
-    for (unsigned long i = 3; i <= n; ++i)
-    {
+    for (unsigned long i = 3; i <= n; ++i) {
         f3 = f1 + f2;
         f1 = f2;
         f2 = f3;

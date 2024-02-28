@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
     [[maybe_unused]] int i = 0;
     int *p;
 

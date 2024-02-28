@@ -26,24 +26,24 @@ char findTheDifference(char* s, char* t) {
 */
 
 char findTheDifference(char* s, char* t) {
-  int is = 0;
-  int it = 0;
-  for (; *s != '\0'; ++s) {
-    is += *s;
-  }
-  for (; *t != '\0'; ++t) {
-    it += *t;
-  }
-  char r = it - is;
-  return r;
+    int is = 0;
+    int it = 0;
+    for (; *s != '\0'; ++s) {
+        is += *s;
+    }
+    for (; *t != '\0'; ++t) {
+        it += *t;
+    }
+    char r = it - is;
+    return r;
 }
 
 int main() {
-  char *s = "asd";
-  char *t = "dsac";
+    char *s = "asd";
+    char *t = "dsac";
 
-  printf("%c\n", findTheDifference(s, t));
+    printf("%c\n", findTheDifference(s, t));
 
-  return 0;
+    return 0;
 }
 

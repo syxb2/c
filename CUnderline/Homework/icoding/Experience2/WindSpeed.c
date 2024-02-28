@@ -1,37 +1,30 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int a;
     printf("请输入风速：");
     scanf("%d", &a);
-    if (a < 1)
-    {
+    if (a < 1) {
         printf("Calm\n");
     }
 
-    else if (a <= 3)
-    {
+    else if (a <= 3) {
         printf("Light air\n");
     }
 
-    else if (a <= 27)
-    {
+    else if (a <= 27) {
         printf("Breeze\n");
     }
 
-    else if (a <= 47)
-    {
+    else if (a <= 47) {
         printf("Gale\n");
     }
 
-    else if (a <= 63)
-    {
+    else if (a <= 63) {
         printf("Storm\n");
     }
 
-    else
-    {
+    else {
         printf("Hurricane\n");
     }
 

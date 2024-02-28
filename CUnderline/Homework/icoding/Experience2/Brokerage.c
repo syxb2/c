@@ -33,14 +33,12 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     float commission, value = 1.0;
 
     printf("Enter value of trade: ");
 
-    while (value != 0.0)
-    {
+    while (value != 0.0) {
         scanf("%f", &value);
         if (value == 0)
             break;

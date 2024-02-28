@@ -6,9 +6,9 @@
 #define MAX_PARTS 100
 
 struct part {
-  int number;
-  char name[NAME_LEN + 1];
-  int on_hand;
+    int number;
+    char name[NAME_LEN + 1];
+    int on_hand;
 } inventory[MAX_PARTS];
 
 int num_parts = 0;   /* number of parts currently stored */
@@ -21,7 +21,7 @@ int num_parts = 0;   /* number of parts currently stored */
  *            length exceeds n. Returns the number of     *
  *            characters stored.                          *
  **********************************************************/
-int read_line(char str[], int n);
+int read_line(char str[ ], int n);
 int find_part(int number);
 void insert(void);
 void search(void);
@@ -36,27 +36,27 @@ void print(void);
  *       enters an illegal code.                          *
  **********************************************************/
 int main(void) {
-  char code;
+    char code;
 
-  for (;;) {
-    printf("Enter operation code: ");
-    scanf(" %c", &code);
-    while (getchar() != '\n')   /* skips to end of line */
-      ;
-    switch (code) {
-      case 'i': insert();
-        break;
-      case 's': search();
-        break;
-      case 'u': update();
-        break;
-      case 'p': print();
-        break;
-      case 'q': return 0;
-      default:  printf("Illegal code\n");
+    for (;;) {
+        printf("Enter operation code: ");
+        scanf(" %c", &code);
+        while (getchar() != '\n')   /* skips to end of line */
+            ;
+        switch (code) {
+            case 'i': insert();
+                break;
+            case 's': search();
+                break;
+            case 'u': update();
+                break;
+            case 'p': print();
+                break;
+            case 'q': return 0;
+            default:  printf("Illegal code\n");
+        }
+        printf("\n");
     }
-    printf("\n");
-  }
 }
 
 /**********************************************************
@@ -65,12 +65,12 @@ int main(void) {
  *            number is found; otherwise, returns -1.     *
  **********************************************************/
 int find_part(int number) {
-  int i;
+    int i;
 
-  for (i = 0; i < num_parts; i++)
-    if (inventory[i].number == number)
-      return i;
-  return -1;
+    for (i = 0; i < num_parts; i++)
+        if (inventory[i].number == number)
+            return i;
+    return -1;
 }
 
 /**********************************************************
@@ -82,26 +82,26 @@ int find_part(int number) {
  **********************************************************/
 // 函数将新零件添加到数据库中。
 void insert(void) {
-  int part_number;
+    int part_number;
 
-  if (num_parts == MAX_PARTS) {
-    printf("Database is full; can't add more parts.\n");
-    return;
-  }
+    if (num_parts == MAX_PARTS) {
+        printf("Database is full; can't add more parts.\n");
+        return;
+    }
 
-  printf("Enter part number: ");
-  scanf("%d", &part_number);
-  if (find_part(part_number) >= 0) {
-    printf("Part already exists.\n");
-    return;
-  }
+    printf("Enter part number: ");
+    scanf("%d", &part_number);
+    if (find_part(part_number) >= 0) {
+        printf("Part already exists.\n");
+        return;
+    }
 
-  inventory[num_parts].number = part_number;
-  printf("Enter part name: ");
-  read_line(inventory[num_parts].name, NAME_LEN);
-  printf("Enter quantity on hand: ");
-  scanf("%d", &inventory[num_parts].on_hand);
-  num_parts++;
+    inventory[num_parts].number = part_number;
+    printf("Enter part name: ");
+    read_line(inventory[num_parts].name, NAME_LEN);
+    printf("Enter quantity on hand: ");
+    scanf("%d", &inventory[num_parts].on_hand);
+    num_parts++;
 }
 
 /**********************************************************
@@ -112,17 +112,17 @@ void insert(void) {
  **********************************************************/
 // search函数通过零件号在数据库中搜索零件。
 void search(void) {
-  int i, number;
+    int i, number;
 
-  printf("Enter part number: ");
-  scanf("%d", &number);
-  i = find_part(number);
-  if (i >= 0) {
-    printf("Part name: %s\n", inventory[i].name);
-    printf("Quantity on hand: %d\n", inventory[i].on_hand);
-  }
-  else
-    printf("Part not found.\n");
+    printf("Enter part number: ");
+    scanf("%d", &number);
+    i = find_part(number);
+    if (i >= 0) {
+        printf("Part name: %s\n", inventory[i].name);
+        printf("Quantity on hand: %d\n", inventory[i].on_hand);
+    }
+    else
+        printf("Part not found.\n");
 }
 
 /**********************************************************
@@ -134,18 +134,18 @@ void search(void) {
  **********************************************************/
 // update函数更新数据库中零件的现有数量。
 void update(void) {
-  int i, number, change;
+    int i, number, change;
 
-  printf("Enter part number: ");
-  scanf("%d", &number);
-  i = find_part(number);
-  if (i >= 0) {
-    printf("Enter change in quantity on hand: ");
-    scanf("%d", &change);
-    inventory[i].on_hand += change;
-  }
-  else
-    printf("Part not found.\n");
+    printf("Enter part number: ");
+    scanf("%d", &number);
+    i = find_part(number);
+    if (i >= 0) {
+        printf("Enter change in quantity on hand: ");
+        scanf("%d", &change);
+        inventory[i].on_hand += change;
+    }
+    else
+        printf("Part not found.\n");
 }
 
 /**********************************************************
@@ -157,11 +157,11 @@ void update(void) {
  **********************************************************/
 // print函数打印数据库中所有零件的零件号，零件名称和现有数量。
 void print(void) {
-  int i;
+    int i;
 
-  printf("Part Number   Part Name                  "
-    "Quantity on Hand\n");
-  for (i = 0; i < num_parts; i++)
-    printf("%7d       %-25s%11d\n", inventory[i].number,
-      inventory[i].name, inventory[i].on_hand);
+    printf("Part Number   Part Name                  "
+        "Quantity on Hand\n");
+    for (i = 0; i < num_parts; i++)
+        printf("%7d       %-25s%11d\n", inventory[i].number,
+            inventory[i].name, inventory[i].on_hand);
 }

@@ -4,25 +4,25 @@
 #include <stdbool.h>
 
 bool is_palindrome(const char *s) {
-  const char *p = s;
-  while (*p) {
-    ++p;
-  }
-  --p;
+    const char *p = s;
+    while (*p) {
+        ++p;
+    }
+    --p;
 
-  while (s < p) {
-    if (*s != *p) return false;
-    ++s, --p;
-  }
+    while (s < p) {
+        if (*s != *p) return false;
+        ++s, --p;
+    }
 
 
-  return true;
+    return true;
 }
 
 int main() {
-  char buf[128];
-  scanf("%s", buf);
-  printf(is_palindrome(buf) ? "yes\n" : "no\n");
+    char buf[128];
+    scanf("%s", buf);
+    printf(is_palindrome(buf) ? "yes\n" : "no\n");
 
-  return 0;
+    return 0;
 }

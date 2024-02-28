@@ -45,15 +45,17 @@ void print(const int* x) {
   // 这里x的基类型是 const int *
   // const约束的是int（因为int和*是两个独立的东西)
   // 会导致'*x'即x指向的整形不可被改变 x是一个指向常量整数的变量指针
-  int z = 0;
-  *x = 1;
-  x = &z;
-  z = 1;
-  // *x = 1; // 错的
-  printf("%d\n", *x);
+    int z = 0;
+    *x = 1;
+    x = &z;
+    z = 1;
+    // *x = 1; // 错的
+    printf("%d\n", *x);
 }
 // 不同的名字访问同一个单元，这个单元就要根据名字进行重解释
 
 // 如果是(int const *x)
 
-int main() { return 0; }
+int main() {
+    return 0;
+}

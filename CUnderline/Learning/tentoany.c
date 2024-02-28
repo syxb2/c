@@ -24,20 +24,20 @@ int main() {
 #include <stdio.h>
 
 int main() {
-  int in, p;
-  int arr[256] = { 0 };
-  scanf("%d%d", &in, &p);
-  int count = 0;
-  do {
-    arr[count++] = in % p;
-    in /= p;
-  } while (in != 0);
+    int in, p;
+    int arr[256] = { 0 };
+    scanf("%d%d", &in, &p);
+    int count = 0;
+    do {
+        arr[count++] = in % p;
+        in /= p;
+    } while (in != 0);
 
-  for (int i = count - 1; i != -1; --i) {
-    printf("%d", arr[i]);
-  }
-  printf("\n");
+    for (int i = count - 1; i != -1; --i) {
+        printf("%d", arr[i]);
+    }
+    printf("\n");
 
-  return 0;
+    return 0;
 }
 

@@ -80,8 +80,7 @@
 #include <stdio.h>
 #include <math.h> // 调用c语言的数学库。
 
-int main()
-{
+int main() {
     // 先确定需要变量的个数：分子，分母，更改正负号，cosx的值，自变量x。共五个变量。
     const long n = 20; // const表示n是一个常量；long表示n是一个长整数。 // n代表计算的项数。
     const double _2pi = 2.0 * 3.1415926;
@@ -96,15 +95,14 @@ int main()
     sign = -1;
 
     scanf("%lf", &x);
-    x -= (int)(x / _2pi) * _2pi; // 由cosx的周期为2pi从而缩小x，从而减小cosx泰勒展开式的误差。
+    x -= (int) (x / _2pi) * _2pi; // 由cosx的周期为2pi从而缩小x，从而减小cosx泰勒展开式的误差。
     // (int)(x / _2pi) 表示将x / _2pi强制转换为整形
 
     a = x * x;
     b = 2;
     // 初始化结束
 
-    for (i = 2; i <= n * 2; i += 2)
-    {
+    for (i = 2; i <= n * 2; i += 2) {
         cosx += sign * a / b;
 
         // 递推：

@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
     double a, b, c, e, f, g, r;
     scanf("%lf", &a); // a是贷款金额
     scanf("%lf", &b); // b是利率

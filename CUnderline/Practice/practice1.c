@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main() {
-  char a = 'A';
+    char a = 'A';
 
-  putchar(a);
+    putchar(a);
 
-  return 0;
+    return 0;
 }

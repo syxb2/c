@@ -18,15 +18,15 @@ int main() {
 */
 
 int main() {
-  int in, p;
-  scanf("%d%d", &in, &p);
-  int out = 0, product = 1;
-  while (in != 0) {
-    out = out + (in % 10) * product;
-    in /= 10;
-    product *= p;
-  }
-  printf("%d\n", out);
+    int in, p;
+    scanf("%d%d", &in, &p);
+    int out = 0, product = 1;
+    while (in != 0) {
+        out = out + (in % 10) * product;
+        in /= 10;
+        product *= p;
+    }
+    printf("%d\n", out);
 
-  return 0;
+    return 0;
 }

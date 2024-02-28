@@ -8,8 +8,7 @@ const double PI = 3.1415926;
 // const是定义函数
 // 一个程序中的定义方式最好只有一种，不要一会define一会const
 
-int main()
-{
+int main() {
     double radius, volumn;
     // radius(半径)，volumn(体积)
 

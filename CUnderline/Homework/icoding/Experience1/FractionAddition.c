@@ -21,8 +21,7 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int num1, denom1, num2, denom2, result_num, result_denom;
 
     printf("Enter two fraction:");

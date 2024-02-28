@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int score;
     char level;
 
@@ -9,25 +8,25 @@ int main()
 
     switch (score / 10) // switch（匹配），看score这个变量和哪个case匹配 // 用switch case时必须要把一个区间映射到一个单点上时
     {
-    case 10:
-    case 9: // case后必须跟整型常量
-        level = 'A';
-        break;
-    case 8:
-        level = 'B';
-        break;
-    case 7:
-        level = 'C';
-        break;
-    case 6:
-        level = 'D';
-        break;
-    default:
-        level = 'F';
+        case 10:
+        case 9: // case后必须跟整型常量
+            level = 'A';
+            break;
+        case 8:
+            level = 'B';
+            break;
+        case 7:
+            level = 'C';
+            break;
+        case 6:
+            level = 'D';
+            break;
+        default:
+            level = 'F';
 
-        // switch case的一个特点：下落(fallthrough)（会一直判断所有的case，直到结束）（如果不加break的话会进行到default从而将level赋值为F）
-        // case标号和default标号只能出现在switch语句下
-        // 能用switch case的尽量用switch case
+            // switch case的一个特点：下落(fallthrough)（会一直判断所有的case，直到结束）（如果不加break的话会进行到default从而将level赋值为F）
+            // case标号和default标号只能出现在switch语句下
+            // 能用switch case的尽量用switch case
     }
 
     printf("%c\n", level);

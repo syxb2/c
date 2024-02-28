@@ -3,12 +3,10 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int m, n, a;
     scanf("%d%d", &m, &n);
-    while (n != 0)
-    {
+    while (n != 0) {
         /* code */
         a = m; // 引入中间变量a，使m不在单次循环中改变
         m = n;

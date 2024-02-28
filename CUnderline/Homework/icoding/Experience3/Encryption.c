@@ -21,6 +21,6 @@
  */
 
 int main() {
-  adsad;
-  return 0;
+    adsad;
+    return 0;
 }

@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 enum traffic {
-  RED, //默认为0
-  AMBER = 3, // 默认为上（前）一项加1 - 这样GREEN的值为4
-  GREEN
-  // 这三个东西是常量，默认为0
+    RED, //默认为0
+    AMBER = 3, // 默认为上（前）一项加1 - 这样GREEN的值为4
+    GREEN
+    // 这三个东西是常量，默认为0
 }; // 定义枚举常量
 // enum这个类型默认是匿名的
 // traffic 是枚举标志名
@@ -12,7 +12,7 @@ enum traffic {
 // 枚举常量的作用域是全局的
 
 int main() {
-  enum traffic light;
+    enum traffic light;
 
-  return 0;
+    return 0;
 }

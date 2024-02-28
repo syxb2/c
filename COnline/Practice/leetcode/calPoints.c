@@ -6,5 +6,5 @@ int calPoints(char** operations, int operationsSize) {
 
 int main() {
 
-  return 0;
+    return 0;
 }

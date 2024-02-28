@@ -27,28 +27,28 @@
 #include <stdio.h>
 
 int main() {
-  double a = 0, b = 0;
-  char sign;
-  scanf("%lf", &b);
-  while ((sign = getchar()) != '\n') {
-    scanf("%lf", &a);
-    switch (sign) {
-      case '+':
-        b = b + a;
-        break;
-      case '-':
-        b = b - a;
-        break;
-      case '*':
-        b = b * a;
-        break;
-      case '/':
-        b = b / a;
-        break;
+    double a = 0, b = 0;
+    char sign;
+    scanf("%lf", &b);
+    while ((sign = getchar()) != '\n') {
+        scanf("%lf", &a);
+        switch (sign) {
+            case '+':
+                b = b + a;
+                break;
+            case '-':
+                b = b - a;
+                break;
+            case '*':
+                b = b * a;
+                break;
+            case '/':
+                b = b / a;
+                break;
+        }
+        a = b;
     }
-    a = b;
-  }
-  printf("%lf\n", a);
+    printf("%lf\n", a);
 
-  return 0;
+    return 0;
 }

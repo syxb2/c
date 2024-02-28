@@ -1,9 +1,8 @@
 #include <stdio.h>
 #define N 10
 
-int main()
-{
-    int a[N] = {2, 2, 3, 5, 7, 2, 5, 1, 9, 4};
+int main() {
+    int a[N] = { 2, 2, 3, 5, 7, 2, 5, 1, 9, 4 };
     int i, j, temp;
 
     for (i = 0; i < N - 1; i++) // 外循环设置排序趟数，N个数进行N-1次排序
@@ -21,8 +20,7 @@ int main()
         }
     }
 
-    for (i = 0; i < N - 1; i++)
-    {
+    for (i = 0; i < N - 1; i++) {
         /* code */
         printf("%d ", a[i]);
     }
