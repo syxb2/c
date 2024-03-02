@@ -120,4 +120,5 @@
     "C_Cpp.vcFormat.space.beforeComma": false,
     "C_Cpp.vcFormat.space.afterComma": true,
     "C_Cpp.vcFormat.space.preserveInInitializerList": false,
+    "C_Cpp.autocomplete": "default",
 }
