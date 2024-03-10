@@ -7,18 +7,18 @@
     2. 指针参数具有潜在的将（多个）计算结果携带出函数的能力
 */
 void swap(int *x, int *y) {
-  int t = *x;
-  *x = *y;
-  *y = t;
+    int t = *x;
+    *x = *y;
+    *y = t;
 }
 
 int main() {
-  int a, b;
+    int a, b;
 
-  scanf("%d%d", &a, &b);
-  printf("a=%d, b=%d\n", a, b);
-  swap(&a, &b);
-  printf("a=%d, b=%d\n", a, b);
+    scanf("%d%d", &a, &b);
+    printf("a=%d, b=%d\n", a, b);
+    swap(&a, &b);
+    printf("a=%d, b=%d\n", a, b);
 
-  return 0;
+    return 0;
 }
