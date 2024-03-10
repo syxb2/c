@@ -1,1 +1,3 @@
-### `Bai‘s Mac`上面的所有c语言代码
+# README.md
+
+### All the c codes in Bai‘s Mac
