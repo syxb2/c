@@ -1,6 +1,6 @@
 // #include <stdio.h>
 
-// double ave_f(double *p, int a, int ave) {
+// float ave_f(float *p, int a, int ave) {
 //   for (int i = 0; i < a; i++) {
 //     ave += *p;
 //     ++p;
@@ -10,7 +10,7 @@
 //   return ave;
 // }
 
-// int mount_f(int a, double *p, int mount, int ave) {
+// int mount_f(int a, float *p, int mount, int ave) {
 //   for (int i = 0; i < a; i++) {
 //     if (*p < ave) {
 //       mount += 1;
@@ -23,11 +23,11 @@
 
 // int main() {
 //   // int n, peoamount = 0, i = 0;
-//   // double average = 0.0;
+//   // float average = 0.0;
 //   int n = 0, i = 0;
 
 //   scanf("%d", &n);
-//   double arr[n];
+//   float arr[n];
 //   // scanf("%ld", );
 
 //   for (i = 0; i < n; i++) {
@@ -63,7 +63,7 @@
 
 #include <stdio.h>
 
-double ave_f(double *p, int a, double ave) {
+float ave_f(float *p, int a, float ave) {
     for (int i = 0; i < a; i++) {
         ave += *p;
         ++p;
@@ -73,7 +73,7 @@ double ave_f(double *p, int a, double ave) {
     return ave;
 }
 
-int mount_f(int a, double *p, int mount, int ave) {
+int mount_f(int a, float *p, int mount, int ave) {
     for (int i = 0; i < a; i++) {
         if (*p < ave) {
             mount += 1;
@@ -86,7 +86,7 @@ int mount_f(int a, double *p, int mount, int ave) {
 
 int main() {
     int n = 0, i = 0;  scanf("%d", &n);
-    double arr[n];
+    float arr[n];
     for (i = 0; i < n; i++) {
         scanf("%lf", &arr[i]);
     }

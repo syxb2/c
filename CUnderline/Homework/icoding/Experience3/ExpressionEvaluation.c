@@ -1,6 +1,6 @@
 // #include <stdio.h>
 // int main() {
-//   double a, d;
+//   float a, d;
 //   char ch;
 //   printf("Enter an expression: ");
 //   scanf("%lf", &a);
@@ -27,7 +27,7 @@
 #include <stdio.h>
 
 int main() {
-    double a = 0, b = 0;
+    float a = 0, b = 0;
     char sign;
     scanf("%lf", &b);
     while ((sign = getchar()) != '\n') {

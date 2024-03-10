@@ -1,11 +1,11 @@
 #include<stdio.h>
 
-int f(double x, double y, double t, double s, int i) {
-    double jd = 0, xz = 0, time = 0;
+int f(float x, float y, float t, float s, int i) {
+    float jd = 0, xz = 0, time = 0;
     xz = y * t;
-    double tempjd = jd;
-    double tempxz = xz;
-    double tm = 0;
+    float tempjd = jd;
+    float tempxz = xz;
+    float tm = 0;
     while (jd < s) {
         tempjd = jd;
         tempxz = xz;
@@ -42,7 +42,7 @@ int f(double x, double y, double t, double s, int i) {
         tm = (xz - jd) / (x - y);
         time += tm;
     }
-    printf("Case #%d: %.3lf\n", i, time);
+    printf("Case #%d: %.3f\n", i, time);
 
     return 0;
 }
@@ -50,12 +50,10 @@ int f(double x, double y, double t, double s, int i) {
 int main() {
     int i = 0;
     scanf("%d", &i);
-    double x[10], y[10], t[10], s[10];
+    float x, y, t, s;
     for (int n = 0; n < i; ++n) {
-        scanf("%lf %lf %lf %lf", &x[n], &y[n], &t[n], &s[n]);
-    }
-    for (int n = 0; n < i; ++n) {
-        f(x[n], y[n], t[n], s[n], n + 1);
+        scanf("%f %f %f %f", &x, &y, &t, &s);
+        f(x, y, t, s, n + 1);
     }
 
     return 0;

@@ -2,12 +2,12 @@
 
 struct X {
     int i;
-    double d;
+    float d;
 };
 
 union Y {
     int i;
-    double d;
+    float d;
 };
 // 联合是一种特殊的结构
 // 联合所有的成员都从相同的地址开始 => 联合的大小等于最大的项的大小

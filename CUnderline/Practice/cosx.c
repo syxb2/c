@@ -6,7 +6,7 @@
 // int main()
 // {
 //     const long n = 8;  // const表示n是一个常量；long表示n是一个长整数。 // n代表保留的位数。
-//     double x, cosx, a; // a表示分子
+//     float x, cosx, a; // a表示分子
 //     long b, i, sign;   // b表示分母；sign表示每一项的正负号；i表示循环次数的二倍（因为cosx的泰勒展开式的每一项递推2（偶数））
 
 //     // 初始化：
@@ -43,9 +43,9 @@
 // int main()
 // {
 //     const long n = 20; // const表示n是一个常量；long表示n是一个长整数。 // n代表计算的项数。
-//     const double _2pi = 2.0 * 3.1415926;
+//     const float _2pi = 2.0 * 3.1415926;
 
-//     double x, cosx, a; // a表示分子
+//     float x, cosx, a; // a表示分子
 //     long b, i, sign;   // b表示分母；sign表示每一项的正负号；i表示循环次数的二倍（因为cosx的泰勒展开式的每一项递推2（偶数））
 
 //     // 初始化：
@@ -83,10 +83,10 @@
 int main() {
     // 先确定需要变量的个数：分子，分母，更改正负号，cosx的值，自变量x。共五个变量。
     const long n = 20; // const表示n是一个常量；long表示n是一个长整数。 // n代表计算的项数。
-    const double _2pi = 2.0 * 3.1415926;
-    const double esp = 1E-7; // 1E-7是科学计数法表示10的-7次方（0.0000001）。
+    const float _2pi = 2.0 * 3.1415926;
+    const float esp = 1E-7; // 1E-7是科学计数法表示10的-7次方（0.0000001）。
 
-    double b, x, cosx, a, cosx_old; // a表示分子 // 这里把b改为double是因为long存不下b了，b太大了。
+    float b, x, cosx, a, cosx_old; // a表示分子 // 这里把b改为float是因为long存不下b了，b太大了。
     long i, sign;                   // b表示分母；sign表示每一项的正负号；i表示循环次数的二倍（为什么要乘2？因为cosx的泰勒展开式的每一项递推2（偶数））
 
     // 初始化：

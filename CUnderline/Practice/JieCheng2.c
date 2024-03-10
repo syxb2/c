@@ -3,7 +3,7 @@
 // int main()
 // {
 //     unsigned long n, fact;
-//     double s;
+//     float s;
 
 //     scanf("%d", &n);
 
@@ -22,7 +22,7 @@
 
 int main() {
     unsigned long n, fact, i;
-    double s;
+    float s;
 
     scanf("%lu", &n); // %lu是unsigned的占位符
     s = 0.0;
@@ -33,7 +33,7 @@ int main() {
         fact *= i;
     }
 
-    printf("%lf\n", s); // %lf是double的占位符
+    printf("%lf\n", s); // %lf是float的占位符
 
     return 0;
 }
