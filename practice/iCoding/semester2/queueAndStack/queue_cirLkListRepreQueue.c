@@ -12,12 +12,14 @@ bool init_queue(LinkQueue *LQ) {
     *LQ = (LinkQueue) malloc(sizeof(LinkQueueNode));
     (*LQ)->next = (*LQ);
 
-    return 1;
+    if (*LQ == NULL) return 0;
+    else return 1;
 }
 
 bool enter_queue(LinkQueue *LQ, ElemType x) {
     if (*LQ == NULL) return 0;
     LinkQueue p = (LinkQueue) malloc(sizeof(LinkQueueNode));
+    if (!p) return 0;
     p->data = x;
     p->next = (*LQ)->next;
     (*LQ)->next = p;
@@ -31,8 +33,14 @@ bool leave_queue(LinkQueue *LQ, ElemType *x) {
     LinkQueue p = (*LQ);
     p = p->next;
     LinkQueue t = p;
-    p = p->next;
-    t->next = p->next;
+    p = p->next; // p 此时指向第一个元素
+    if ((*LQ)->next->next == *LQ) {
+        *LQ = (*LQ)->next;
+        (*LQ)->next = *LQ;
+
+    }
+    else
+        t->next = p->next;
     *x = p->data;
 
     free(p);
