@@ -1,15 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ElemType int
-
-
-struct _lnklist {
-    ElemType data;
-    struct _lnklist *next;
-};
-typedef struct _lnklist Node;
-typedef struct _lnklist *LinkList;
+#include "lnkList.h"
 
 
 void lnk_merge(LinkList A, LinkList B, LinkList C) {
