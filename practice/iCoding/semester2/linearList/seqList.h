@@ -40,3 +40,14 @@ bool add_seqlist(SeqList* L, ElemType x) {
 
     return 1;
 }
+
+bool del_seqlist(SeqList* L, int sub, ElemType* x) {
+    if (L == NULL) return 0;
+    for (int i = sub; i < L->last; ++i) {
+        L->elem[i] = L->elem[i + 1];
+    }
+    L->elem[L->last] = 0;
+    --(L->last);
+
+    return 1;
+}
