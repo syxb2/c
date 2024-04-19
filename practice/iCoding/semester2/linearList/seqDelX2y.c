@@ -15,15 +15,42 @@ typedef struct _seqlist SeqList;*/
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "seqlist.h" // 请不要删除，否则检查不通过
+#include "seqList.h" // 请不要删除，否则检查不通过
 
 
-void del_x2y(SeqList *L, ElemType x, ElemType y) {
+void del_x2y(SeqList  *L, ElemType x, ElemType y) {
+    for (int i = 0; 1;) {
+        if (L->elem[i] >= x && L->elem[i] <= y) {
+            int x = 0;
+            del_seqlist(L, i, &x);
+            continue;
+        }
+        ++i;
+        if (i > L->last) break;
+    }
 
+    return;
 }
 
 
 int main() {
+    SeqList l, *p = &l;
+    init_seqlist(p);
+    add_seqlist(p, 870);
+    add_seqlist(p, 863);
+    add_seqlist(p, 230);
+    add_seqlist(p, 989);
+    add_seqlist(p, 77);
+    add_seqlist(p, 691);
+    add_seqlist(p, 654);
+    add_seqlist(p, 810);
+    add_seqlist(p, 293);
+    add_seqlist(p, 603);
+    add_seqlist(p, 916);
+    add_seqlist(p, 15);
+    add_seqlist(p, 290);
+
+    del_x2y(p, 230, 654);
 
     return 0;
 }

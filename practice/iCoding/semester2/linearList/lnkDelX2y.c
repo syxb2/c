@@ -19,7 +19,6 @@ void lnk_del_x2y(LinkList L, ElemType mink, ElemType maxk)
 
 #include "lnkList.h"
 
-
 void lnk_del_x2y(LinkList L, ElemType mink, ElemType maxk) {
     int minnum = 0, accordnum = 0;
     LinkList p = L->next;

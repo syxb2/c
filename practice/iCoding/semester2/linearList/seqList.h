@@ -43,6 +43,7 @@ bool add_seqlist(SeqList* L, ElemType x) {
 
 bool del_seqlist(SeqList* L, int sub, ElemType* x) {
     if (L == NULL) return 0;
+    *x = L->elem[sub];
     for (int i = sub; i < L->last; ++i) {
         L->elem[i] = L->elem[i + 1];
     }
