@@ -24,3 +24,25 @@ void blstr_init(BLString *T) {
     T->head = NULL;
     T->tail = NULL;
 }
+
+void blstr_append(BLString *T, char *s, int len) {
+    T->len = len;
+    Block *t = (Block*) malloc(sizeof(Block));
+    T->head = t;
+    T->tail = t;
+
+    for (int i = 0, j = 0; i < len; ++i) {
+        T->tail->ch[j] = *s;
+        ++s;
+        ++j;
+        if (j / 4) {
+            j -= 4;
+            Block * temp = (Block*) malloc(sizeof(Block));
+            T->tail->next = temp;
+            T->tail = T->tail->next;
+        }
+    }
+}
+
+
+
