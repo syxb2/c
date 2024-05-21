@@ -20,12 +20,12 @@ int init_cross_list(PCrossList L, const ElemType *A, int m, int n) {
     OLink q = NULL;
 
     // 初始化行头数组和列头数组
-    L->rowhead = (OLink*) malloc(m * sizeof(OLink));
+    L->rowhead = (OLink*) malloc((m + 1) * sizeof(OLink));
     if (L->rowhead == NULL) exit(0);
     for (int i = 0; i < m; ++i) {
         L->rowhead[i] = NULL;
     }
-    L->colhead = (OLink*) malloc(n * sizeof(OLink));
+    L->colhead = (OLink*) malloc((n + 1) * sizeof(OLink));
     if (L->colhead == NULL) exit(0);
     for (int i = 0; i < n; ++i) {
         L->colhead[i] = NULL;
@@ -35,8 +35,6 @@ int init_cross_list(PCrossList L, const ElemType *A, int m, int n) {
     for (int i = 0; i < m; ++i) {
         for (int j = 0; j < n; ++j) {
             if (A[i * n + j] != 0) {
-                ++(L->nums);
-
                 // 创建新结点
                 OLink New = (OLink) malloc(sizeof(OLNode));
                 if (New == NULL) {
@@ -52,23 +50,25 @@ int init_cross_list(PCrossList L, const ElemType *A, int m, int n) {
                 New->col = j + 1;
                 New->value = A[i * n + j];
 
+                ++(L->nums);
+
                 // 插入节点到正确位置
-                if (L->rowhead[i] == NULL) { // 如果行头为空, 则直接插入
-                    L->rowhead[i] = New;
+                if (L->rowhead[i + 1] == NULL) { // 如果行头为空, 则直接插入 // 这里也要从 1 开始
+                    L->rowhead[i + 1] = New;
                 }
                 else {
-                    p = L->rowhead[i];
+                    p = L->rowhead[i + 1];
                     while (p->right != NULL) {
                         p = p->right;
                     }
                     p->right = New;
                 }
 
-                if (L->colhead[j] == NULL) {
-                    L->colhead[j] = New;
+                if (L->colhead[j + 1] == NULL) {
+                    L->colhead[j + 1] = New;
                 }
                 else {
-                    q = L->colhead[j];
+                    q = L->colhead[j + 1];
                     while (q->down != NULL) {
                         q = q->down;
                     }
@@ -89,32 +89,43 @@ int del_cross_list(PCrossList L, ElemType k) {
     // 初始化计数器
     int count = 0;
 
-    // 初化定位指针 前驱指针 和 当前指针
-    OLink l = NULL;
-    OLink h = NULL;
-    OLink Now = NULL;
+    // 遍历每一行的行头
+    for (int i = 1; i <= L->rows; ++i) {
+        OLink prev = NULL; // 前驱指针
+        OLink l = L->rowhead[i]; // 当前指针
+        
+        while (l != NULL) {
+            if (l->value == k) {
+                OLink to_delete = l; // 需要删除的节点
 
-    for (int i = 0; i < L->rows; ++i) {
-        l = L->rowhead[i];
-        if (l == NULL) continue;
-
-        while (l->right != NULL) {
-            if (l->right->value == k) {
-                // 定位 Now 指针
-                Now = l->right;
-                l->right = Now->right;
-
-                // 定位 h 指针
-                h = L->colhead[Now->col - 1];
-                while (h->down != Now) {
-                    h = h->down;
+                // 更新行头或前驱节点的指向
+                if (prev == NULL) {
+                    L->rowhead[i] = l->right;
+                } else {
+                    prev->right = l->right;
                 }
-                h->down = Now->down;
 
+                // 更新列头的指向
+                OLink col_prev = NULL;
+                OLink col = L->colhead[to_delete->col];
+                if (col == to_delete) {
+                    L->colhead[to_delete->col] = to_delete->down;
+                } else {
+                    while (col->down != to_delete) {
+                        col = col->down;
+                    }
+                    col->down = to_delete->down;
+                }
+
+                // 移动到下一个节点
+                l = l->right;
+
+                // 释放节点并增加计数器
+                free(to_delete);
                 ++count;
-                free(Now);
-            }
-            else {
+            } else {
+                // 前移指针
+                prev = l;
                 l = l->right;
             }
         }
@@ -123,8 +134,53 @@ int del_cross_list(PCrossList L, ElemType k) {
     return count;
 }
 
+int del_cross_list_pre(PCrossList L, ElemType k) {
+    // 初始化计数器
+    int count = 0;
 
-int main() {
+    // 初化定位指针 前驱指针 和 当前指针
+    OLink l = NULL;
+    OLink h = NULL;
+    OLink prev = NULL;
 
-    return 0;
+    for (int i = 0; i < L->rows; ++i) {
+        l = L->rowhead[i + 1];
+        if (l == NULL) continue;
+        prev = l;
+
+        while (l->right != NULL) {
+            OLink Now = NULL;
+
+            if (l->value == k || l->right->value == k) {
+                // 定位 Now 指针
+                if (l->value == k) {
+                    Now = l;
+                    L->rowhead[i + 1] = L->rowhead[i + 1]->right;
+                }
+                else if (l->right->value == k) {
+                    Now = l->right;
+                    l->right = Now->right;
+                }
+
+                // 定位 h 指针
+                h = L->colhead[Now->col];
+                while (h->down != Now) {
+                    h = h->down;
+                }
+                h->down = Now->down;
+
+                ++count;
+                free(Now);
+
+                // 更新 l 指针
+                l = prev;
+            }
+            else {
+                prev = l;
+                l = l->right;
+            }
+        }
+    }
+
+    return count;
 }

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "crosslist.h"
 
+
 int init_cross_list(PCrossList L, const ElemType* A, int m, int n) {
     // 初始化行数，列数和非零元素个数为0
     L->rows = m;
