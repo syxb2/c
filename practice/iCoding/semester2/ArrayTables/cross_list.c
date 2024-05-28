@@ -92,21 +92,20 @@ int del_cross_list(PCrossList L, ElemType k) {
     // 遍历每一行的行头
     for (int i = 1; i <= L->rows; ++i) {
         OLink prev = NULL; // 前驱指针
-        OLink l = L->rowhead[i]; // 当前指针
+        OLink Now = L->rowhead[i]; // 当前指针
         
-        while (l != NULL) {
-            if (l->value == k) {
-                OLink to_delete = l; // 需要删除的节点
+        while (Now != NULL) {
+            if (Now->value == k) {
+                OLink to_delete = Now; // 需要删除的节点
 
                 // 更新行头或前驱节点的指向
                 if (prev == NULL) {
-                    L->rowhead[i] = l->right;
+                    L->rowhead[i] = Now->right;
                 } else {
-                    prev->right = l->right;
+                    prev->right = Now->right;
                 }
 
                 // 更新列头的指向
-                OLink col_prev = NULL;
                 OLink col = L->colhead[to_delete->col];
                 if (col == to_delete) {
                     L->colhead[to_delete->col] = to_delete->down;
@@ -118,15 +117,15 @@ int del_cross_list(PCrossList L, ElemType k) {
                 }
 
                 // 移动到下一个节点
-                l = l->right;
+                Now = Now->right;
 
                 // 释放节点并增加计数器
                 free(to_delete);
                 ++count;
             } else {
                 // 前移指针
-                prev = l;
-                l = l->right;
+                prev = Now;
+                Now = Now->right;
             }
         }
     }
