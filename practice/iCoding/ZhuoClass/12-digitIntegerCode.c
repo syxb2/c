@@ -35,6 +35,7 @@ bool can_be_encoded(unsigned int num) {
     return 0;
 }
 
+
 int main() {
     unsigned int K, m = 0, n = MAX;
     scanf("%u", &K);
@@ -67,7 +68,6 @@ int main() {
         return 0;
     }
     printf("%u,%u,%u\n", K, m, n);
-
 
     return 0;
 }
