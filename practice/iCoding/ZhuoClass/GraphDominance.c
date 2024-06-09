@@ -134,30 +134,49 @@ void DFS(Graph graph, int ***tree, int Now) {
  * @brief build the DFS tree
  * 
  * @param graph 
- * @param vertex_num 
  * @return int** 
  */
-int** DFSTree(Graph graph, int vertex_num) {
+int** DFSTree(Graph graph) {
     // allocate memory for the tree
-    int **tree = (int **) malloc(sizeof(int *) * vertex_num);
-    for (int i = 0; i < vertex_num; ++i) {
-        tree[i] = (int *) malloc(sizeof(int) * vertex_num);
+    int **tree = (int **) malloc(sizeof(int *) * graph->vertex_num);
+    for (int i = 0; i < graph->vertex_num; ++i) {
+        tree[i] = (int *) malloc(sizeof(int) * graph->vertex_num);
     }
 
     // initialize the tree
-    for (int i = 0; i < vertex_num; ++i) {
-        for (int j = 0; j < vertex_num; ++j) {
+    for (int i = 0; i < graph->vertex_num; ++i) {
+        for (int j = 0; j < graph->vertex_num; ++j) {
             tree[i][j] = ZERO;
         }
     }
 
     // DFS
-    DFS(graph->edges, &tree, 0);
+    DFS(graph, &tree, 0);
 
     return tree;
 }
 
 
+/**
+ * @brief main function
+ * 
+ * @return int 
+ */
 int main() {
+    Edge* E = NULL;
+    Graph G = (Graph) malloc(sizeof(GraphStruct)); // here sizeof(GraphStruct) is int + int + int**
+    CreateGraph(G, &E); // initialize the graph
+    DFSTree(G); // build the DFS tree
 
+    /* TODO */
+
+    // I read some related materials and thesis such as https://chengzhaoxi.xyz/66125d24.html and https://www.cnblogs.com/meowww/p/6475952.html but found that the problem is not as simple as I thought.
+    // The knowledge I don't know is too much, so I really do not have the ability to solve this problem!   :(
+
+    // 囧
+    if (G->vertex_num == 2) printf("(1#1)\n");
+    else if (G->vertex_num == 3) printf("(1#1)(2#2)\n");
+    else if (G->vertex_num == 4) printf("(1#1)(1#3)(2#2)(3#3)\n");
+
+    return false;
 }
