@@ -39,7 +39,7 @@ typedef BiTNode* ElemType;
 typedef struct{
     ElemType elem[Stack_Size];
     int top;
-}Stack;
+} Stack;
 
 void init_stack(Stack *S); // 初始化栈
 bool push(Stack* S, ElemType x); //x 入栈
