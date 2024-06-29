@@ -11,19 +11,19 @@ typedef enum {
 typedef struct __HashEntry HashEntry;
 struct __HashEntry {
     union {
-        char  *str_value;
-        double dbl_value;
-        int       int_value;
+        char*   str_value;
+        double  dbl_value;
+        int     int_value;
     } key;
     union {
-        char  *str_value;
-        double dbl_value;
-        int       int_value;
-        long   long_value;
-        void  *ptr_value;
+        char*   str_value;
+        double  dbl_value;
+        int     int_value;
+        long    long_value;
+        void*   ptr_value;
     } value;
     HashEntry *next;
-};
+}; // HashEntry* 是 Hash 表中元素的形式
 
 struct __HashTable {
     HashEntry **bucket;
