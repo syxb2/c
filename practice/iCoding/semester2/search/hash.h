@@ -1,3 +1,5 @@
+#pragma once
+
 typedef enum {
     HASH_OK,
     HASH_ERROR,

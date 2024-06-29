@@ -1,3 +1,5 @@
+#pragma once
+
 typedef struct node {
     int val;
     struct node *left;
