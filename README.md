@@ -10,7 +10,6 @@
 $ tree -I "*.dSYM|*.out"
 
 .
-├── Icon\015
 ├── README.md
 ├── ZZZClass
 │   ├── FileOperation.c
@@ -24,9 +23,9 @@ $ tree -I "*.dSYM|*.out"
 │   │   └── isThereRing.c
 │   ├── main
 │   ├── main.c
+│   ├── package.zip
 │   ├── test.txt
 │   ├── 截屏2024-06-10 下午10.26.28.png
-│   ├── 白家乐2023090913021.zip
 │   └── 综合性题目（卓中卓2024）.pdf
 ├── learning
 │   ├── programAlgorithms1
@@ -244,5 +243,5 @@ $ tree -I "*.dSYM|*.out"
     ├── test4-hioi.c
     └── yhTriangle.c
 
-39 directories, 195 files
+39 directories, 194 files
 ```
