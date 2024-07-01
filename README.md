@@ -11,23 +11,7 @@ $ tree -I "*.dSYM|*.out"
 
 .
 ├── README.md
-├── ZZZClass
-│   ├── FileOperation.c
-│   ├── FileOperation.h
-│   ├── Makefile
-│   ├── README.docx
-│   ├── README.md
-│   ├── iCoding
-│   │   ├── 12-digitIntegerCode.c
-│   │   ├── GraphDominance.c
-│   │   └── isThereRing.c
-│   ├── main
-│   ├── main.c
-│   ├── package.zip
-│   ├── test.txt
-│   ├── 截屏2024-06-10 下午10.26.28.png
-│   └── 综合性题目（卓中卓2024）.pdf
-├── learning
+├── cource
 │   ├── programAlgorithms1
 │   │   ├── If.c
 │   │   ├── PrintfAndScanf.c
@@ -188,60 +172,76 @@ $ tree -I "*.dSYM|*.out"
 │   │   ├── mergeAlternately.c
 │   │   ├── moveZeroes.c
 │   │   └── strStr.c
-│   └── lutece
-│       ├── Arrange.c
-│       ├── BiliBiliACFunAndMore.c
-│       ├── DayOfYear.c
-│       ├── DivingScoring.c
-│       ├── EightBall.c
-│       ├── IsDivisibleBy3.c
-│       ├── MedianNumber.c
-│       ├── MonkeyChooseKing.c
-│       ├── RotateMatrix.c
-│       └── TurnOnLights.c
-├── projectGobang
+│   ├── lutece
+│   │   ├── Arrange.c
+│   │   ├── BiliBiliACFunAndMore.c
+│   │   ├── DayOfYear.c
+│   │   ├── DivingScoring.c
+│   │   ├── EightBall.c
+│   │   ├── IsDivisibleBy3.c
+│   │   ├── MedianNumber.c
+│   │   ├── MonkeyChooseKing.c
+│   │   ├── RotateMatrix.c
+│   │   └── TurnOnLights.c
+│   └── mine
+│       ├── AchievementStatistics.c
+│       ├── CharToInt.c
+│       ├── Count2kOutLoop.c
+│       ├── Hanoi.c
+│       ├── HundredChickens.c
+│       ├── HundredChickens.md
+│       ├── InReverseOrder.c
+│       ├── InReverseOrder.md
+│       ├── JieCheng.c
+│       ├── JieCheng2.c
+│       ├── STriangle.c
+│       ├── VCircle.c
+│       ├── WXT.c
+│       ├── a.c
+│       ├── chaperII11.c
+│       ├── chapterII6.c
+│       ├── cmdline.c
+│       ├── cosx.c
+│       ├── decompose.c
+│       ├── exppRepoter.c
+│       ├── fact.c
+│       ├── fibonacci.c
+│       ├── fibonacci_1.c
+│       ├── function.c
+│       ├── happyNY.c
+│       ├── max.c
+│       ├── other.c
+│       ├── palindrome.c
+│       ├── planet.c
+│       ├── planet2.c
+│       ├── pointer.c
+│       ├── practice1.c
+│       ├── printf.c
+│       ├── scanf.c
+│       ├── test.c
+│       ├── test2.c
+│       ├── test4-hioi.c
+│       └── yhTriangle.c
+├── project_gobang
+│   ├── README.md
 │   ├── game.h
-│   ├── howtobuild.md
 │   └── main.c
-└── test
-    ├── AchievementStatistics.c
-    ├── CharToInt.c
-    ├── Count2kOutLoop.c
-    ├── Hanoi.c
-    ├── HundredChickens.c
-    ├── HundredChickens.md
-    ├── InReverseOrder.c
-    ├── InReverseOrder.md
-    ├── JieCheng.c
-    ├── JieCheng2.c
-    ├── STriangle.c
-    ├── VCircle.c
-    ├── WXT.c
-    ├── a.c
-    ├── chaperII11.c
-    ├── chapterII6.c
-    ├── cmdline.c
-    ├── cosx.c
-    ├── decompose.c
-    ├── exppRepoter.c
-    ├── fact.c
-    ├── fibonacci.c
-    ├── fibonacci_1.c
-    ├── function.c
-    ├── happyNY.c
-    ├── max.c
-    ├── other.c
-    ├── palindrome.c
-    ├── planet.c
-    ├── planet2.c
-    ├── pointer.c
-    ├── practice1.c
-    ├── printf.c
-    ├── scanf.c
-    ├── test.c
-    ├── test2.c
-    ├── test4-hioi.c
-    └── yhTriangle.c
+└── zzz_class
+    ├── FileOperation.c
+    ├── FileOperation.h
+    ├── Makefile
+    ├── README.docx
+    ├── README.md
+    ├── iCoding
+    │   ├── 12-digitIntegerCode.c
+    │   ├── GraphDominance.c
+    │   └── isThereRing.c
+    ├── main
+    ├── main.c
+    ├── package.zip
+    ├── test.txt
+    ├── 截屏2024-06-10 下午10.26.28.png
+    └── 综合性题目（卓中卓2024）.pdf
 
 39 directories, 194 files
 ```

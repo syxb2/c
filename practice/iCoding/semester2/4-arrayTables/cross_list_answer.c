@@ -10,17 +10,13 @@ int init_cross_list(PCrossList L, const ElemType* A, int m, int n) {
     L->nums = 0;
     // 分配行指针数组和列指针数组的内存空间
     L->rowhead = (OLNode**) malloc(sizeof(OLNode*) * (m + 1));
-    if (L->rowhead == NULL) {
-        exit(0);
-    }
+    if (L->rowhead == NULL) return 0;
     // 初始化行指针数组的所有元素为NULL
     for (int i = 0; i <= m; i++) {
         L->rowhead[i] = NULL;
     }
     L->colhead = (OLNode**) malloc(sizeof(OLNode*) * (n + 1));
-    if (L->colhead == NULL) {
-        exit(0);
-    }
+    if (L->colhead == NULL) return 0;
     // 初始化列指针数组的所有元素为NULL
     for (int i = 0; i <= n; i++) {
         L->colhead[i] = NULL;
