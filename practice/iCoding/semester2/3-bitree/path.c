@@ -1,11 +1,22 @@
+/**
+ * @file path.c
+ * @author Bai Jiale (578767478@qq.com)
+ * @brief 路径
+ * 假设二叉树采用二叉链表方式存储， root指向根结点，node 指向二叉树中的一个结点，编写函数 path，计算root到 node 之间的路径，（该路径包括root结点和 node 结点）。path 函数声明如下：
+ * bool path(BiTNode* root, BiTNode* node, Stack* s);
+ * 其中，root指向二叉树的根结点，node指向二叉树中的另一结点，s 为已经初始化好的栈，该栈用来保存函数所计算的路径，如正确找出路径，则函数返回 true，此时root在栈底，node在栈顶；如未找到，则函数返回 false, 
+ * @version 0.1
+ * @date 2024-07-01
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 #include <stdlib.h>
 #include <stdio.h>
 #include "bitree.h" //请不要删除，否则检查不通过
 
 
 #define Stack_Size  50
-#define false       0
-#define true        1
 
 
 typedef int DataType;

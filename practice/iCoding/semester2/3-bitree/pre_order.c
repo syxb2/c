@@ -61,16 +61,16 @@ void pre_order_answer(BiTree root) {
             visit_node(p);
             push(S, p);
             p = p->left;
+            //* 栈中结点的本身被遍历过，且左子树也被遍历过
         }
         if (!is_empty(S)) {
             pop(S, &p);
             p = p->right;
+            //* 转到右子树后，重新进入循环
         }
     }
+
     free(S);
-}
 
-int main() {
-
-    return 0;
+    return;
 }

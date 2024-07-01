@@ -1,41 +1,42 @@
 /*
-栈 后缀表达式计算
-
-请使用已定义好的栈完成后缀表达式计算：
-(1)如果是操作数，直接入栈
-(2)如果是操作符op，连续出栈两次，得到操作数x 和 y,计算 x op y，并将结果入栈。
-
-后缀表达式示例如下：
-9  3  1  -  3  *  +  10  2  /  +
-13  445  +  51  /  6  -
-操作数、操作符之间由空格隔开，操作符有 +，-，*, /, %共 5 种符号，所有操作数都为整型。
-
-栈的定义如下：
-
-#define Stack_Size 50
-typedef struct{
-    ElemType elem[Stack_Size];
-    int top;
-}Stack;
-
-bool push(Stack* S, ElemType x);
-bool pop(Stack* S, ElemType *x);
-void init_stack(Stack *S);
-其中，栈初始化的实现为：
-
-void init_stack(Stack *S){
-    S->top = -1;
-}
-需要完成的函数定义为：int compute_reverse_polish_notation(char *str);
-
-函数接收一个字符指针，该指针指向一个字符串形式的后缀表达式，函数返回该表达式的计算结果。
-*/
-
+ * 栈 后缀表达式计算
+ *
+ * 请使用已定义好的栈完成后缀表达式计算：
+ * (1) 如果是操作数，直接入栈
+ * (2) 如果是操作符op，连续出栈两次，得到操作数x 和 y，计算 x op y，并将结果入栈。
+ *
+ * 后缀表达式示例如下：
+ * 9 3 1 - 3 * + 10 2 / +
+ * 13 445 + 51 / 6 -
+ * 操作数、操作符之间由空格隔开，操作符有 +，-，*，/，% 共 5 种符号，所有操作数都为整型。
+ *
+ * 栈的定义如下：
+ *
+ * #define Stack_Size 50
+ * typedef struct{
+ *     ElemType elem[Stack_Size];
+ *     int top;
+ * } Stack;
+ *
+ * bool push(Stack* S, ElemType x);
+ * bool pop(Stack* S, ElemType *x);
+ * void init_stack(Stack *S);
+ * 其中，栈初始化的实现为：
+ *
+ * void init_stack(Stack *S){
+ *     S->top = -1;
+ * }
+ * 需要完成的函数定义为：int compute_reverse_polish_notation(char *str);
+ *
+ * 函数接收一个字符指针，该指针指向一个字符串形式的后缀表达式，函数返回该表达式的计算结果。
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
+
 #define Stack_Size 50
 #define ElemType int
+
 
 typedef struct {
     ElemType elem[Stack_Size];
@@ -44,12 +45,24 @@ typedef struct {
 
 Stack s;
 
+/**
+ * @param S 
+ * @param x 
+ * @return true 
+ * @return false 
+ */
 bool push(Stack* S, ElemType x) {
     S->elem[++S->top] = x;
 
     return 1;
 }
 
+/**
+ * @param S 
+ * @param x 
+ * @return true 
+ * @return false 
+ */
 bool pop(Stack* S, ElemType *x) {
     *x = S->elem[S->top];
     --S->top;
@@ -57,17 +70,25 @@ bool pop(Stack* S, ElemType *x) {
     return 1;
 }
 
+/**
+ * @param S 
+ */
 void init_stack(Stack *S) {
     S->top = -1;
 }
 
+/**
+ * @param str 
+ * @return int 
+ */
 int compute_reverse_polish_notation(char *str) {
     int res = 0;
+
     for (; *str != '\0';) {
         if (*str == ' ') ++str;
         for (; *str != ' ' && *str != '\0';) {
-            int temp_res = 0;
             int a, b;
+
             switch (*str) {
                 case '+':
                     pop(&s, &a);
@@ -99,17 +120,17 @@ int compute_reverse_polish_notation(char *str) {
                     push(&s, b % a);
                     ++str;
                     break;
-                default:
+                default: // if *str is a number
+                    int single_number = 0;
                     for (; *str != ' ' && *str != '\0';) {
-                        int temp = *str - '0';
-                        temp_res += temp;
+                        int t = *str - '0';
+                        single_number += t;
                         ++str;
                         if (*str != ' ' && *str != '\0') {
-                            temp_res *= 10;
+                            single_number *= 10;
                         }
                     }
-                    push(&s, temp_res);
-
+                    push(&s, single_number);
             }
         }
     }
