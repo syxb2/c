@@ -39,7 +39,7 @@ bool path(BiTNode* root, BiTNode* target, Stack* stack) {
             root = root->left; // 继续遍历左子树
             //* 栈中任何结点的左子树都被遍历过。所以 弹栈的下一步就是遍历右子树（这是就有判断右子树是否被遍历过的问题，如果右子树被遍历过，继续弹栈）
         }
-        else {
+        else { //! 非递归 后序遍历 的 思想
             top(stack, &root); // 栈顶元素赋给root
             if (root->right != NULL && root->right != visited) root = root->right; // 如果右子树存在且未被遍历，遍历右子树
             else { //* 在这里弹出元素时，原本 root 指针指向的结点的的左子树一定已经被遍历过了。又因为它的上一步的 if 语句中已经判断过它的右子树是否被遍历过，所以进入 else 时这个元素的右子树也已经被遍历过了。
